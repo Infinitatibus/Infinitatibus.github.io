@@ -1,0 +1,11 @@
+.keytarget {
+    cursor: pointer;
+}
+
+.key {
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #d0d0d0;
+    font-size: 24pt;
+    font-family: serif;
+}

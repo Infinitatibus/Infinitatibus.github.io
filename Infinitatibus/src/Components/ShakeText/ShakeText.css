@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Amarante');
+
+.shake-container {
+  display: inline-block;
+  flex-wrap: wrap;
+  animation: sway 15s ease-in-out infinite;
+}
+
+.shake-char {
+  display: inline-block;
+  will-change: transform;
+  color: #d0d0d0; 
+  font-family:'Amarante';
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}

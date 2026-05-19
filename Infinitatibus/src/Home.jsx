@@ -40,6 +40,21 @@ export default function Home() {
     else if (input == "HOLTZ") {
       setReply("OLDER THAN HE LOOKS.")
     }
+    else if (input == "MYRON") {
+      setReply("HE DOES HIS BEST.")
+    }
+    else if (input == "HERO") {
+      setReply("STILL HASN'T LET GO.")
+    }
+    else if (input == "HIRO") {
+      setReply("STILL HASN'T LET GO.")
+    }
+    else if (input == "KITTY") {
+      setReply("CUTE.")
+    }
+    else if (input == "QUIET") {
+      setReply("WHEN THE SEA DROWNS THE WORLD...")
+    }
     else if (input == "CASSANDRA") {
       setReply("OF DESERT RAIN.")
     }

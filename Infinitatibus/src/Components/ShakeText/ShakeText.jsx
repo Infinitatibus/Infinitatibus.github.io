@@ -45,7 +45,7 @@ export default function ShakeText({ children, mag, speed_factor, seed }) {
           char={char}
           mag={mag}
           speed_factor={speed_factor}
-          seed={seed}
+          seed={Math.random()}
         />
       ))}
     </div>

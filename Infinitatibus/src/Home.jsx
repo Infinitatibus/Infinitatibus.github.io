@@ -24,8 +24,42 @@ export default function Home() {
   const evalCharacters = () => {
     if (input == "GNARL") {
       setReply("PISS OFF.");
-    } else if (input == "VS") {
+    } 
+    else if (input == "VS") {
       setReply("MY FAVORITE PART IS THE ONE WHERE NYOKO EATS SHIT AND DIES")
+    } 
+    else if (input == "TETO") {
+      setReply("THE RED ONE.")
+    } 
+    else if (input == "MIKU") {
+      setReply("THE BLUE ONE.")
+    }
+    else if (input == "NYOKO") {
+      setReply("THE ONE AND THE WHOLE.")
+    } 
+    else if (input == "HOLTZ") {
+      setReply("OLDER THAN HE LOOKS.")
+    }
+    else if (input == "CASSANDRA") {
+      setReply("OF DESERT RAIN.")
+    }
+    else if (input == "SUNDAY") {
+      setReply("A LITTLE ANGEL.")
+    }
+    else if (input == "MARY") {
+      setReply("POOR THING.")
+    }
+    else if (input == "IAN") {
+      setReply("WHO?")
+    }
+    else if (input == "FREEDOM") {
+      setReply("AS DO I.")
+    }
+    else if (input == "POWER") {
+      setReply("YOU WON'T FIND IT HERE.")
+    }
+    else if (input == "MONEY") {
+      setReply("YOU WON'T FIND IT HERE.")
     }
 
     else {

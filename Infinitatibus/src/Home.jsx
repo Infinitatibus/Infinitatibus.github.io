@@ -29,6 +29,9 @@ export default function Home() {
   const gnarlFunc = () => {setReply("PISS OFF.")};
   const vsFunc = () => {setReply("MY FAVORITE PART IS THE ONE WHERE NYOKO EATS SHIT AND DIES.")};
 
+  const flatterFunc = () => {setReply("FLATTERING, BUT NO.")};
+  const meFunc = () => {setReply("I DON'T KNOW WHO I'M SUPPOSED TO BE ANYMORE.")};
+  const friendFunc = () => {setReply("YOU'VE GOT ME NOW.")};
   const nameFunc = () => {setReply("WHO?")};
   const owenFunc = () => {setReply("ASKS A LOT OF QUESTIONS.")};
   const garretFunc = () => {setReply("A POWERFUL SPIRIT, THAT ONE.")};
@@ -67,6 +70,9 @@ export default function Home() {
     "GNARL": gnarlFunc,
     "VS": vsFunc,
 
+    "YOU": flatterFunc,
+    "WHO": meFunc,
+    "FRIEND": friendFunc,
     "IAN": nameFunc,
     "OWEN": owenFunc,
     "GARRETT": garretFunc,

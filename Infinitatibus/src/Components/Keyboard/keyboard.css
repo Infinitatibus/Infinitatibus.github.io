@@ -1,5 +1,24 @@
 .keytarget {
     cursor: pointer;
+    text-shadow: 
+    0 0 5px #ffffff92,
+    0 0 7px #ffffff5e,
+    0 0 10px #ffffff28;
+    
+}
+
+.keytarget:hover {
+  text-shadow: 
+    0 0 6px #ffffffaf,
+    0 0 8px #ffffff8a,
+    0 0 10px #ffffff92;
+}
+
+.keytarget:active {
+  text-shadow: 
+    0 0 10px #ffffffee,
+    0 0 11px #ffffffc3,
+    0 0 20px #ffffffc8;
 }
 
 .key {
@@ -8,4 +27,25 @@
     fill: #d0d0d0;
     font-size: 24pt;
     font-family: serif;
+    display: inline-block;
+    animation: gentle-float 6s ease-in-out infinite;
+    animation-delay: var(--offset);   
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-4px, 3px) rotate(1deg);
+  }
+  40% {
+    transform: translate(3px, -2px) rotate(-1.5deg);
+  }
+  60% {
+    transform: translate(-2px, -4px) rotate(1deg);
+  }
+  80% {
+    transform: translate(4px, 2px) rotate(-0.5deg);
+  }
 }

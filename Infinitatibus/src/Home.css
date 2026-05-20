@@ -2,6 +2,12 @@
   display: flex;
   justify-content: center;
   height: 10vh;
+  text-shadow: 
+    0 0 7px #ffffff59,
+    0 0 10px #ffffff64,
+    0 0 21px #ffffff5d,
+    0 0 42px #ffffff41,
+    0 0 55px #ffffff17;
 }
 
 .buttons {
@@ -9,8 +15,47 @@
   justify-content: space-evenly;
 }
 
+.image-button {
+  max-width: 40%;
+  height: auto;
+  filter: drop-shadow(0 0 20px #ffffff9d);
+  transition: filter 0.3s ease-in-out;
+}
+
+.image-button:hover {
+  filter: drop-shadow(0 0 20px #ffffffc9);
+  transition: filter 0.2s ease-out;
+}
+
+.image-button:active {
+  filter: drop-shadow(0 0 20px #ffffff);
+  transition: filter 30ms ease-in;
+}
+
 .kbbutton {
+    max-width: 10%;
     border: none; 
     background: none;
     cursor: pointer; 
+    display: inline-block;
+    animation: gentle-float 9s ease-in-out infinite;
+    animation-delay: var(--offset);
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-3px, 2px) rotate(1deg);
+  }
+  40% {
+    transform: translate(2px, -1px) rotate(-1.5deg);
+  }
+  60% {
+    transform: translate(-1px, -3px) rotate(1deg);
+  }
+  80% {
+    transform: translate(3px, 1px) rotate(-0.5deg);
+  }
 }

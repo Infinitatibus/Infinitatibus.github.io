@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import './keyboard.css';
 
-export default function Keyboard({ width, height, onKey, radius }) {
+export default function Keyboard({ width, height, onKey }) {
   const topRow = "ABCDEFGHIJKLM".split("");
   const bottomRow = "NOPQRSTUVWXYZ".split("");
 
@@ -10,19 +10,19 @@ export default function Keyboard({ width, height, onKey, radius }) {
     letters,
     radius,
     startAngle,
-    endAngle
+    endAngle,
+    row
   ) => {
     return letters.map((letter, i) => {
       const t = i / (letters.length - 1);
 
-      const angle =
-        startAngle + (endAngle - startAngle) * t;
+      const angle = startAngle + (endAngle - startAngle) * t;
 
-      const x =
-        width / 2 + radius * Math.cos(angle);
+      const x = width / 2 + radius * Math.cos(angle);
 
-      const y =
-        height*2.2 - radius * Math.sin(angle);
+      const y = height*2.2 - radius * Math.sin(angle);
+
+      const offsetTime = (i+row)*4.2;
 
       return (
         <g
@@ -36,6 +36,7 @@ export default function Keyboard({ width, height, onKey, radius }) {
 
           <text
             className="key"
+            style={{'--offset': `-${offsetTime}s`}}
           >
             {letter}
           </text>
@@ -47,20 +48,22 @@ export default function Keyboard({ width, height, onKey, radius }) {
   return (
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        width="100%"
+        style={{width: "100%", height: "auto"}}
       >
         {renderArc(
           topRow,
-          820,
+          width*0.4,
           Math.PI * 0.7,
-          Math.PI * 0.3
+          Math.PI * 0.3,
+          1
         )}
         
         {renderArc(
           bottomRow,
-          680,
+          width*0.35,
           Math.PI * 0.68,
-          Math.PI * 0.32
+          Math.PI * 0.32,
+          10
         )}
       </svg>
   );

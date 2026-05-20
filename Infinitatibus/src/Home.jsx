@@ -8,12 +8,112 @@ import sun from './Assets/sun.png'
 
 import './Home.css';
 
+
+
+
+
 export default function Home() {
   const [reply, setReply] = useState("WHAT DO YOU SEEK?");
   const [input, setInput] = useState("");
 
+  //FLAGS
+  const [bye, setbye] = useState(false);
+
+
+  //---------------------------------------------------REPLY FUNCTIONS--------------------------------------------------
+  const defaultFunc = () => {setReply("...")};
+
+  //template
+  const Func = () => {setReply("")};
+
+  const gnarlFunc = () => {setReply("PISS OFF.")};
+  const vsFunc = () => {setReply("MY FAVORITE PART IS THE ONE WHERE NYOKO EATS SHIT AND DIES.")};
+
+  const nameFunc = () => {setReply("WHO?")};
+  const owenFunc = () => {setReply("ASKS A LOT OF QUESTIONS.")};
+  const garretFunc = () => {setReply("A POWERFUL SPIRIT, THAT ONE.")};
+  const deconFunc = () => {setReply("AN... INTERESTING ONE.")};
+
+  const helloFunc = () => {setReply("HELLO.")};
+  const byeFunc = () => {
+    setReply("GOODBYE.");
+    setbye(true);
+  };
+  
+  const wontFindFunc = () => {setReply("YOU WON'T FIND IT HERE.")};
+  const impossibleFunc = () => {setReply("IMPOSSIBLE.")};
+  const niceFunc = () => {setReply("WOULDN'T THAT BE NICE?")};
+
+  const tetoFunc = () => {setReply("THE RED ONE.")};
+  const reiFunc = () => {setReply("THE ORANGE ONE.")};
+  const neruFunc = () => {setReply("THE YELLOW ONE.")};
+  const gumiFunc = () => {setReply("THE GREEN ONE.")};
+  const mikuFunc = () => {setReply("THE BLUE ONE.")};
+  const defokoFunc = () => {setReply("THE PURPLE ONE.")};
+  
+  const sundayFunc = () => {setReply("A LITTLE ANGEL.")};
+  const maryFunc = () => {setReply("POOR THING...")};
+
+  const nyokoFunc = () => {setReply("THE ONE AND THE WHOLE.")};
+  const heroFunc = () => {setReply("STILL HASN'T LET GO.")};
+  const cassieFunc = () => {setReply("OF DESERT RAINE.")};
+  const holtzFunc = () => {setReply("OLDER THAN HE LOOKS.")};
+  const myronFunc = () => {setReply("HE DOES HIS BEST.")};
+  const kittyFunc = () => {setReply("CUTE.")};
+  const quietFunc = () => {setReply("WHEN THE SEA DROWNS THE WORLD...")};
+
+
+  const inputMap = {
+    "GNARL": gnarlFunc,
+    "VS": vsFunc,
+
+    "IAN": nameFunc,
+    "OWEN": owenFunc,
+    "GARRETT": garretFunc,
+    "DECON": deconFunc,
+
+    "HELLO": helloFunc,
+    "HI": helloFunc,
+    "SUP": helloFunc,
+    "HEY": helloFunc,
+    "BYE": byeFunc,
+    "GOODBYE": byeFunc,
+
+    "POWER": wontFindFunc,
+    "MONEY": wontFindFunc,
+    "LOVE": niceFunc,
+    "HAPPINESS": wontFindFunc,
+    "PEACE": wontFindFunc,
+    "FREEDOM": impossibleFunc,
+
+    "TETO": tetoFunc,
+    "REI": reiFunc,
+    "NERU": neruFunc,
+    "GUMI": gumiFunc,
+    "MIKU": mikuFunc,
+    "DEFOKO": defokoFunc,
+
+    "SUNDAY": sundayFunc,
+    "MARY": maryFunc,
+
+    "NYOKO": nyokoFunc,
+    "CASSANDRA": cassieFunc,
+    "CASSIE": cassieFunc,
+    "HERO": heroFunc,
+    "HIRO": heroFunc,
+    "MYRON": myronFunc,
+    "HOLTZ": holtzFunc,
+    "KITTY": kittyFunc,
+    "KAAI": kittyFunc,
+    "FRANK": kittyFunc,
+    "QUIET": quietFunc
+  }
+
   const addCharacter = (char) => {
     setInput(prevText => prevText + char);
+    if (bye == true) {
+      setReply("...OR NOT?");
+    }
   };
 
   const delCharacters = () => {
@@ -21,76 +121,16 @@ export default function Home() {
     setInput("");
   };
 
+  
   const evalCharacters = () => {
-    if (input == "GNARL") {
-      setReply("PISS OFF.");
-    } 
-    else if (input == "VS") {
-      setReply("MY FAVORITE PART IS THE ONE WHERE NYOKO EATS SHIT AND DIES")
-    } 
-    else if (input == "TETO") {
-      setReply("THE RED ONE.")
-    } 
-    else if (input == "MIKU") {
-      setReply("THE BLUE ONE.")
+    const func = inputMap[input];
+    if (func == null) {
+      defaultFunc();
+    } else {
+      func();
     }
-    else if (input == "NYOKO") {
-      setReply("THE ONE AND THE WHOLE.")
-    } 
-    else if (input == "HOLTZ") {
-      setReply("OLDER THAN HE LOOKS.")
-    }
-    else if (input == "MYRON") {
-      setReply("HE DOES HIS BEST.")
-    }
-    else if (input == "HERO") {
-      setReply("STILL HASN'T LET GO.")
-    }
-    else if (input == "HIRO") {
-      setReply("STILL HASN'T LET GO.")
-    }
-    else if (input == "KITTY") {
-      setReply("CUTE.")
-    }
-    else if (input == "QUIET") {
-      setReply("WHEN THE SEA DROWNS THE WORLD...")
-    }
-    else if (input == "CASSANDRA") {
-      setReply("OF DESERT RAIN.")
-    }
-    else if (input == "SUNDAY") {
-      setReply("A LITTLE ANGEL.")
-    }
-    else if (input == "MARY") {
-      setReply("POOR THING.")
-    }
-    else if (input == "IAN") {
-      setReply("WHO?")
-    }
-    else if (input == "FREEDOM") {
-      setReply("AS DO I.")
-    }
-    else if (input == "POWER") {
-      setReply("YOU WON'T FIND IT HERE.")
-    }
-    else if (input == "MONEY") {
-      setReply("YOU WON'T FIND IT HERE.")
-    }
-
-    else {
-      setReply("...")
-    }
-
     setInput("");
   };
-
-  useEffect(() => {
-    document.body.style.backgroundColor = 'black';
-    
-    return () => {
-      document.body.style.backgroundColor = null;
-    };
-  }, []);
 
   return (
     <>
@@ -101,13 +141,13 @@ export default function Home() {
         <ShakeText mag={2} speed_factor={0.0008} seed={40}>{input}</ShakeText>
       </div>
       <br/><br/><br/><br/><br/>
-      <Keyboard width={2000} height={400} radius={300} onKey={addCharacter}/>
+      <Keyboard width={2000} height={400} onKey={addCharacter}/>
       <div className="buttons">
-        <button type="button" className="kbbutton" onClick={delCharacters}>
-          <img src={moon} alt="Moon" width="50" height="50"/>
+        <button type="button" className="kbbutton" style={{'--offset': '-0s'}} onClick={delCharacters}>
+          <img src={moon} alt="Moon" className="image-button"/>
         </button>
-        <button type="button" className="kbbutton" onClick={evalCharacters}>
-          <img src={sun} alt="Sun" width="55" height="55"/>
+        <button type="button" className="kbbutton" style={{'--offset': '-3s'}} onClick={evalCharacters}>
+          <img src={sun} alt="Sun" className="image-button"/>
         </button>
       </div>
     </>

@@ -3,7 +3,6 @@
 .shake-container {
   display: inline-block;
   flex-wrap: wrap;
-  animation: sway 15s ease-in-out infinite;
 }
 
 .shake-char {

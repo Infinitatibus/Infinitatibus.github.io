@@ -9,13 +9,20 @@
     0 0 55px #ffffff17;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  margin: 0;
+}
+
 .buttons {
   display: flex;
   justify-content: space-evenly;
 }
 
 .image-button {
-  max-width: 40%;
+  width: clamp(50px, 20%, 150px);
   height: auto;
   filter: drop-shadow(0 0 20px #ffffff9d);
   transition: filter 0.3s ease-in-out;
@@ -32,13 +39,14 @@
 }
 
 .kbbutton {
-    max-width: 10%;
-    border: none; 
-    background: none;
-    cursor: pointer; 
-    display: inline-block;
-    animation: gentle-float 9s ease-in-out infinite;
-    animation-delay: var(--offset);
+  min-width: 10%;
+  height: auto;
+  border: none; 
+  background: none;
+  cursor: pointer; 
+  display: inline-block;
+  animation: gentle-float 9s ease-in-out infinite;
+  animation-delay: var(--offset);
 }
 
 @keyframes gentle-float {

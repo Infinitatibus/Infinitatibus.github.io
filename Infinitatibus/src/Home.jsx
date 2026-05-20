@@ -140,23 +140,27 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className="central">
+    <div className="main">
+      <div style={{flex: 1}}>
+        <div className="central" style={{paddingTop: "20px", paddingBottom: "20px"}}>
         <ShakeText mag={5} speed_factor={0.0005} seed={39}>{reply}</ShakeText>
+        </div>
+        <div className="central" style={{paddingBottom: "20px"}}>
+          <ShakeText mag={2} speed_factor={0.0008} seed={40}>{input}</ShakeText>
+        </div>
       </div>
-      <div className="central">
-        <ShakeText mag={2} speed_factor={0.0008} seed={40}>{input}</ShakeText>
+      
+      <div className="main" style={{minHeight: "300px"}}>
+        <Keyboard width={2000} height={400} onKey={addCharacter}/>
+        <div className="buttons">
+          <button type="button" className="kbbutton" style={{'--offset': '-0s'}} onClick={delCharacters}>
+            <img src={moon} alt="Moon" className="image-button"/>
+          </button>
+          <button type="button" className="kbbutton" style={{'--offset': '-3s'}} onClick={evalCharacters}>
+            <img src={sun} alt="Sun" className="image-button"/>
+          </button>
+        </div>
       </div>
-      <br/><br/><br/><br/><br/>
-      <Keyboard width={2000} height={400} onKey={addCharacter}/>
-      <div className="buttons">
-        <button type="button" className="kbbutton" style={{'--offset': '-0s'}} onClick={delCharacters}>
-          <img src={moon} alt="Moon" className="image-button"/>
-        </button>
-        <button type="button" className="kbbutton" style={{'--offset': '-3s'}} onClick={evalCharacters}>
-          <img src={sun} alt="Sun" className="image-button"/>
-        </button>
-      </div>
-    </>
+    </div>
   );
 }

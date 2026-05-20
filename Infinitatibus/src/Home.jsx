@@ -39,7 +39,7 @@ export default function Home() {
     setReply("GOODBYE.");
     setbye(true);
   };
-  
+
   const wontFindFunc = () => {setReply("YOU WON'T FIND IT HERE.")};
   const impossibleFunc = () => {setReply("IMPOSSIBLE.")};
   const niceFunc = () => {setReply("WOULDN'T THAT BE NICE?")};
@@ -113,6 +113,7 @@ export default function Home() {
     setInput(prevText => prevText + char);
     if (bye == true) {
       setReply("...OR NOT?");
+      setbye(false);
     }
   };
 
